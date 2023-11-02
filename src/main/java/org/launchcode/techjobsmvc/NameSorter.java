@@ -1,7 +1,7 @@
 package org.launchcode.techjobsmvc;
 
 import java.util.Comparator;
-
+// imports two objects, converts them to lowercase strings, and compares them
 public class NameSorter implements Comparator<Object> {
 
     @Override

@@ -14,13 +14,14 @@ import java.util.HashMap;
 /**
  * Created by LaunchCode
  */
+//controller for Spring
 @Controller
 @RequestMapping(value = "list")
 public class ListController {
-
+// column and data in column
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
-
+//constructor for the class
     public ListController () {
         columnChoices.put("all", "All");
         columnChoices.put("employer", "Employer");
@@ -34,7 +35,7 @@ public class ListController {
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
 
     }
-
+//list method, maps GET requests on url
     @GetMapping(value = "")
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
@@ -46,7 +47,7 @@ public class ListController {
 
         return "list";
     }
-
+//returns the job list properly
     @GetMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
         ArrayList<Job> jobs;

@@ -12,9 +12,10 @@ import java.util.HashMap;
 @Controller
 public class HomeController {
 
+    //requests root html get
     @GetMapping(value = "/")
     public String index(Model model) {
-
+//two key value pairs
         HashMap<String, String> actionChoices = new HashMap<>();
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");

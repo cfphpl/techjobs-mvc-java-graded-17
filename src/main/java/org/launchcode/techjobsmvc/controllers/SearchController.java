@@ -17,10 +17,11 @@ import static org.launchcode.techjobsmvc.controllers.ListController.columnChoice
 /**
  * Created by LaunchCode
  */
+//handles search stuff
 @Controller
 @RequestMapping("search")
 public class SearchController {
-
+//GET mapping for search
     @GetMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
@@ -28,6 +29,8 @@ public class SearchController {
     }
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
+    // this is how i process the search requests. Can either search all or specific stuff based on column criteria
+    //Return it as a result in search
     @PostMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
         ArrayList<Job> jobs;
